@@ -1,5 +1,16 @@
-/*
-  Name: Blink with delay function.
+ /*
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+
+  Most Arduinos have an on-board LED you can control. On the Uno and
+  Leonardo, it is attached to digital pin 13. If you're unsure what
+  pin the on-board LED is connected to on your Arduino model, check
+  the documentation at http://www.arduino.cc
+
+  This example code is in the public domain.
+
+  modified 8 May 2014
+  by Scott Fitzgerald
 
   This example is inefficient to do more than blink a led. The Arduino Board just freeze during the delay function,
   if you try to turn 2 leds with different times you'll fail. The worst thing you can use is the delay function on
