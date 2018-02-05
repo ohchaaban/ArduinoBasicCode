@@ -7,6 +7,7 @@
 
 const int LedPin = 7;           //Pin connected to the led
 long previousMillis = 0;        // will store last time LED was updated
+int ledState = LOW;             // ledState used to set the LED
 
 
 // the setup function runs once when you press reset or power the board
