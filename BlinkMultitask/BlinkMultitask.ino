@@ -57,7 +57,6 @@ void blinkMillis(int Pin, long timeHigh, long timeLow, long previousMillis) {
     }
   } else {
     if (currentMillis - previousMillis > timeHigh) {
-   
       updateMillis(Pin, currentMillis); //Updating Milli Variables.
       digitalWrite(Pin, LOW);
     }
