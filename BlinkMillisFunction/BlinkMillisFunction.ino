@@ -29,12 +29,12 @@ void blinkMillis(int Pin, long timeHigh, long timeLow) {
 
     if (currentMillis - previousMillis > timeLow) { //When the difference between the current time and the initial/previous time exceeds
       previousMillis = currentMillis;         //the timeLow of the led, it turns it ON
-      digitalWrite(LedPin, HIGH);
+      digitalWrite(Pin, HIGH);
     }
   } else {
     if (currentMillis - previousMillis > timeHigh) { //When the difference between the current time and the initial/previous time exceeds
       previousMillis = currentMillis;           //the timeHigh of the led, it turns it OFF
-      digitalWrite(LedPin, LOW);
+      digitalWrite(Pin, LOW);
     }
   }
 
