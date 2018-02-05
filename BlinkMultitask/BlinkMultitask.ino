@@ -1,10 +1,14 @@
 /*
   Name: Blink Multitask.
   
-  Blink 2 leds using milli function.
+  Blink 2 leds using millis function.
 
   This example avoid the delay fuctions that freeze the Arduino board. It is now
-  multitasking. 
+  multitasking. This is a great way to blink leds, read sensor and more stuffs 
+  being precise and accurate in timming. 
+
+    Go to my Github to get more code examples:
+  https://github.com/ohchaaban/ArduinoLedExamples
 
   Created on 04 Feb 2018
   by Omar Chaaban
