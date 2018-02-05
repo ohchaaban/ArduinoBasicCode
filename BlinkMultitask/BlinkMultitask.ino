@@ -1,11 +1,11 @@
 /*
   Name: Blink Multitask.
-  
+
   Blink 2 leds using millis function.
 
-  This example avoid the delay fuctions that freeze the Arduino board. It is now
-  multitasking. This is a great way to blink leds, read sensor and more stuffs 
-  being precise and accurate in timming. 
+  This example avoid the delay fuctions that freeze the Arduino board and It's a
+  multitasking board now. This is a great way to blink leds, read sensors and 
+  do more stuffs at the same time, being precise and accurate.  
 
     Go to my Github to get more code examples:
   https://github.com/ohchaaban/ArduinoLedExamples
@@ -41,18 +41,23 @@ void loop() {
 //BlinkMillis Function
 void blinkMillis(int Pin, long timeHigh, long timeLow, long previousMillis) {
 
-  unsigned long currentMillis = millis();           //take the current time
+  unsigned long currentMillis = millis();
+  //take the current time
 
-  if (digitalRead(Pin) == LOW) {                            //ask for the actual led state
+  if (digitalRead(Pin) == LOW) {
+    //ask for the actual led/pin state
 
-    if (currentMillis - previousMillis > timeLow) { //When the difference between the current time and the initial/previous time exceeds
-      //the timeLow of the led, it turns it ON
+    //Check if it's time to change the led's state
+    // between the current time and last time you blinked the LED is bigger than
+    // the interval at which you want to blink the LED.
+    
+    if (currentMillis - previousMillis > timeLow) { //
       updateMillis(Pin, currentMillis); //Updating Milli Variables.
       digitalWrite(Pin, HIGH);
     }
   } else {
-    if (currentMillis - previousMillis > timeHigh) { //When the difference between the current time and the initial/previous time exceeds
-      //the timeHigh of the led, it turns it OFF
+    if (currentMillis - previousMillis > timeHigh) {
+   
       updateMillis(Pin, currentMillis); //Updating Milli Variables.
       digitalWrite(Pin, LOW);
     }
@@ -60,11 +65,11 @@ void blinkMillis(int Pin, long timeHigh, long timeLow, long previousMillis) {
 
 }
 
-//Record the exact time when a led change its state.
+//Record the exact time when a specific led/pin change its state.
 void updateMillis(int Pin, long previousMillis) {
 
-  switch (Pin) {    //Recognize the pin/Led used
-    case greenLed:
+  switch (Pin) {    
+    case greenLed: 
       millisGreen = previousMillis;
       break;
     case redLed:
