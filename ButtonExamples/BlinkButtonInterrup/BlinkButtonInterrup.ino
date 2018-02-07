@@ -1,7 +1,7 @@
 /*
   Name: BlinkButtonInterrup.
 
-  Now we Blink the green and with a pushbutton using the Attach Interrup function.
+  Now I Blink the green and with a pushbutton using the Attach Interrup function.
   As you see, there is nothing inside void loop function because the Arduino do not
   need to read any input over and over, it just needs to wait to be interrupted to
   call the the blink functions in this case.
