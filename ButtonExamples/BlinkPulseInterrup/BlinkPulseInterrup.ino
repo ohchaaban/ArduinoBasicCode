@@ -72,16 +72,18 @@ void loop() {
 }
 
 
-
 //This function is called when exist an interrup.
 //It's change the state of the pin/led.
 void blink() {
   //  state = !state;
+  if (flag == false){
   millisGreen = millis(); //set the time when the button was activated
   millisRed = millis();   // as the initial time of the blink
+  resetTimers();
   intervalCounter = 0;
   flag  = true; // the flag lets blink running until the red led ends its interval
-
+  }
+  
 }
 
 //BlinkMillis Function
@@ -126,7 +128,7 @@ void updateMillis(int Pin, long previousMillis) {
       */
       millisRed = previousMillis;
       flag = !checkPeriod();  //Wait until the red led complete it's period to stop the blink.
-      //When checkPeriod is True, the flag turns false.
+      //When checkPeriod is True, the flag turns false and viceversa.
       break;
   }
 
@@ -142,6 +144,29 @@ boolean checkPeriod() {
     return true; //stop the blink
   }
   return false; // do not stop the blink
+}
+
+///Reset simulation's timers
+
+void resetTimers(){
+  digitalWrite(5, LOW);
+  delay(1); 
+  digitalWrite(5, HIGH);
+  delay(1);
+  digitalWrite(5, LOW);
+
+  /*
+  Eventhough I am using the delay function,
+  A) it's for a very short of time, one microsecond.
+  B) The leds used the millis funtions before I call this function,
+  so the leds will count this microsecond.
+  C)This fuction is NOT called in the void loop. Avoid use delays
+  and call functions with delays in them always in void loop.
+
+  NOTE: One microsecond works in a simulation, probably this value have 
+  to be bigger in the real life though, maybe 50ms.
+   */
+  
 }
 
 
