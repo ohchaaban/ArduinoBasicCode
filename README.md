@@ -1,4 +1,4 @@
-# Arduino Basic Coding (ABC)
+# Arduino Basic Code (ABC)
 Created by Omar Chaaban
 04 Feb, 2018
 
